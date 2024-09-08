@@ -31,7 +31,7 @@ class TicketStatusResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        return __('Referential');
+        return __('Master Data');
     }
 
     public static function form(Form $form): Form
