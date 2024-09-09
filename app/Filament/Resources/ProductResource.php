@@ -7,6 +7,7 @@ use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Filament\Resources\ProductResource\RelationManagers\SuppliersRelationManager;
 use App\Models\Product;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -65,10 +66,10 @@ class ProductResource extends Resource
                                     ->maxLength(255),
                                 Forms\Components\TextInput::make('product_description')
                                     ->label(__('Deskripsi Barang'))
-                                    ->required()
                                     ->maxLength(255),
                                 Select::make('available_status')
                                     ->label(__('Status Barang'))
+                                    ->required()
                                     ->options([
                                         'available' => 'Available',
                                         'unavailable' => 'Unavailable',
@@ -81,16 +82,19 @@ class ProductResource extends Resource
                                     ->maxLength(255),
                                 Select::make('category_id')
                                     ->label(__('Kategori Barang'))
+                                    ->required()
                                     ->relationship('category', 'category_name')
                                     ->searchable()
                                     ->preload(),
                                 Select::make('unit_id')
                                     ->label(__('Satuan Barang'))
+                                    ->required()
                                     ->relationship('unit', 'unit_name')
                                     ->searchable()
                                     ->preload(),
                                 Select::make('suppliers')
                                     ->label(__('Supplier'))
+                                    ->required()
                                     ->multiple()
                                     ->relationship('suppliers', 'supplier_name')
                                     ->searchable()

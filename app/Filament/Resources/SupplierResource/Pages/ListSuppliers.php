@@ -16,6 +16,16 @@ class ListSuppliers extends ListRecords
 {
     protected static string $resource = SupplierResource::class;
 
+    protected function getTableRecordsPerPageSelectOptions(): array
+    {
+        return [10, 20, 50, 100];
+    }
+
+    protected function getDefaultTableRecordsPerPageSelectOption(): int
+    {
+        return 20;
+    }
+
     protected function getActions(): array
     {
         return [

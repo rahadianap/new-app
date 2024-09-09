@@ -49,7 +49,7 @@ return [
     |--------------------------------------------------------------------------
     | The column to use for login/username authentication. NOTE: this may change to just 'login_field' in a later release.
     */
-    "fallback_login_field" => "email",
+    "fallback_login_field" => "name",
     /*
     |--------------------------------------------------------------------------
     | Set a route name prefix for all of Breezy's auth routes. Ex. set filament. to prefix all route names, filament.register. WARNING: if you use a custom route prefix, you'll need to override the default auth routes used throughout your application. This is outside of Breezy's scope and will be up to the dev to maintain. Use at your own risk. See example: https://laravel.com/docs/9.x/passwords#password-customization
@@ -69,7 +69,7 @@ return [
     |--------------------------------------------------------------------------
     | The max-w-xx of the auth card used on all pages.
     */
-    "auth_card_max_w" => "md",
+    "auth_card_max_w" => "lg",
     /*
     |--------------------------------------------------------------------------
     | Enable or disable registration.
