@@ -7,7 +7,6 @@ use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Filament\Resources\ProductResource\RelationManagers\SuppliersRelationManager;
 use App\Models\Product;
 use Filament\Forms;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -17,6 +16,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 
 class ProductResource extends Resource
 {
@@ -59,11 +59,7 @@ class ProductResource extends Resource
                                     ->label(__('Nama Barang'))
                                     ->required()
                                     ->maxLength(255),
-                                Forms\Components\TextInput::make('product_price')
-                                    ->label(__('Harga Barang'))
-                                    ->numeric()
-                                    ->required()
-                                    ->maxLength(255),
+                                Forms\Components\TextInput::make('product_price')->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->money(prefix: 'Rp. ', thousandsSeparator: '.', decimalPlaces: 0, isSigned: false)),
                                 Forms\Components\TextInput::make('product_description')
                                     ->label(__('Deskripsi Barang'))
                                     ->maxLength(255),

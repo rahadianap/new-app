@@ -36,6 +36,7 @@ class ListProducts extends ListRecords
             Actions\CreateAction::make(),
             Action::make('importExcel')
                 ->label('Import')
+                ->color('success')
                 ->form([
                     FileUpload::make('attachment'),
                 ])
@@ -52,6 +53,7 @@ class ListProducts extends ListRecords
                         ->send();
                 }),
             ExportAction::make()
+                ->color('success')
                 ->exports([
                     ExcelExport::make()
                         ->fromTable()

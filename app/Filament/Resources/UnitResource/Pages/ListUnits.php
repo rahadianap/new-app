@@ -45,6 +45,7 @@ class ListUnits extends ListRecords
                 ),
             Action::make('importExcel')
                 ->label('Import')
+                ->color('success')
                 ->form([
                     FileUpload::make('attachment'),
                 ])
@@ -60,6 +61,7 @@ class ListUnits extends ListRecords
                         ->send();
                 }),
             ExportAction::make()
+                ->color('success')
                 ->exports([
                     ExcelExport::make()
                         ->fromTable()

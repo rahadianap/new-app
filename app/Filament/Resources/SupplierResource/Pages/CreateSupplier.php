@@ -24,4 +24,9 @@ class CreateSupplier extends CreateRecord
             ->title('Saved Successfully')
             ->body('Data Supplier baru berhasil dibuat!');
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

@@ -31,6 +31,7 @@ class ListSuppliers extends ListRecords
         return [
             Actions\CreateAction::make(),
             ImportAction::make()
+                ->color('success')
                 ->fields([
                     ImportField::make('product_code')
                         ->required(),
@@ -39,6 +40,7 @@ class ListSuppliers extends ListRecords
                         ->label('Product name')
                 ]),
             ExportAction::make()
+                ->color('success')
                 ->exports([
                     ExcelExport::make()
                         ->fromTable()

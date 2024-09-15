@@ -21,7 +21,8 @@ class Product extends Model
         'available_status',
         'initial_stock',
         'category_id',
-        'unit_id'
+        'unit_id',
+        'supplier_id'
     ];
 
     public function category(): BelongsTo
